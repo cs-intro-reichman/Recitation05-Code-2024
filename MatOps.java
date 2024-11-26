@@ -3,6 +3,25 @@ public class MatOps {
         
     }
 
+    // Question 2
+    public static void printArray(int[] array){
+        System.out.print('{'); 
+        for (int i = 0; i < array.length; i++){
+            System.out.print(array[i]);
+            char c = i != array.length - 1 ? ',' : '}';
+            System.out.print(c);
+        }
+        System.out.println();
+    }
+    
+    public static void print2DArray (int[][] arr) {
+        System.out.println('{'); 
+        for (int i = 0; i < arr.length; i++) {
+            printArray(arr[i]);
+        }
+        System.out.println('}');
+    }
+
     // Question 7
     public static void rowInterchange(int[][] mat, int row1, int row2) {
         int[] temp = mat[row1];
@@ -70,22 +89,4 @@ public class MatOps {
         }
         return newMat;
     }
-    
-    
-    
-    
-    
-    
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  
 }

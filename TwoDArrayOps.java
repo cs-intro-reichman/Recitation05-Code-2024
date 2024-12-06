@@ -1,10 +1,30 @@
 public class TwoDArrayOps {
     public static void main(String[] args) {
         int [][] arr = {{1,2},{3,4}};
-        flatten(arr);
+
+        int [][] arr2 = {
+            {1,2,3,4},
+            {5,6,7,8},
+            {9,10,11,12}
+        };
+        System.out.println(arr2.length);
+        System.out.println(arr2[0].length);
+        // flatten(arr);
     }
     // Question 5
     public static int[] flatten(int[][] arr) {
+        int[] flat = new int[arr.length * arr[0].length];
+        int index = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                flat[index] = arr[i][j];
+                index++;
+            }
+        }
+        return flat;
+    }
+    // Question 5, Alternative version
+    public static int[] flatten1 (int[][] arr) {
         int[] flat = new int[arr.length * arr[0].length];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
@@ -14,13 +34,30 @@ public class TwoDArrayOps {
         return flat;
     }
 
-    // Question 5, Expansion 1
+    // Question 5, Expansion 1,
     public static int[] flattenNonRectangular (int[][] arr) {
-        int sum = 0;
+        int numElemFlat = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum += arr[i].length;
+            numElemFlat += arr[i].length;
         }
-        int[] oneDArr = new int[sum];
+        int[] oneDArr = new int[numElemFlat];
+        int index = 0; 
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                oneDArr[index] = arr[i][j];
+                index++;
+            }
+        }
+        return oneDArr;
+    }
+
+    // Question 5, Expansion 1, Alternative
+    public static int[] flattenNonRectangular1 (int[][] arr) {
+        int numElemFlat = 0;
+        for (int i = 0; i < arr.length; i++) {
+            numElemFlat += arr[i].length;
+        }
+        int[] oneDArr = new int[numElemFlat];
         int num = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {

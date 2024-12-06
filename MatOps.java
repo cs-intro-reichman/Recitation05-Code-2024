@@ -3,7 +3,6 @@ public class MatOps {
         
     }
 
-    // Question 2
     public static void printArray(int[] array){
         System.out.print('{'); 
         for (int i = 0; i < array.length; i++){
@@ -88,5 +87,5 @@ public class MatOps {
             newMat[i][col2] = temp;
         }
         return newMat;
-    }
+    } 
 }
